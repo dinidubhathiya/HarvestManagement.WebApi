@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "e5ec2828-12af-4d14-b819-e0cba3d75d3f",
+		"name": "Harvest Management service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Harvest entry",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"Orchard\": {\n\"Id\": \"0c1f770c-3392-11ee-be56-0242ac120002\",\n\"Name\": \"A1\",\n\"Block\": 18,\n\"SubBlock\": \"42B\"\n},\n\"SupervisorId\": \"87892a43-d96b-4b90-8c4c-925d07fe07fb\",\n\"PickerId\": \"d7895f81-66b1-11ed-a52c-0242c0a85002\",\n\"PickingDate\": \"2023-06-08T12:30:00Z\",\n\"Type\": \"Bin\",\n\"BinCount\": 1,\n\"HourlyWageRate\": 12.50,\n\"HoursWorked\": 5,\n\"Variety\": \"Royal Gala\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:7077/api/v1/Harvest",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7077",
+					"path": [
+						"api",
+						"v1",
+						"Harvest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Harvest entries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7077/api/v1/Harvest?orcherdIds=769e6571-100e-4a18-a577-34a49f0c8ed3&start=2023-06-03 00:00:00&end=2023-06-04 00:00:00&orcherdIds=0c1f770c-3392-11ee-be56-0242ac120002",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7077",
+					"path": [
+						"api",
+						"v1",
+						"Harvest"
+					],
+					"query": [
+						{
+							"key": "orcherdIds",
+							"value": "769e6571-100e-4a18-a577-34a49f0c8ed3"
+						},
+						{
+							"key": "start",
+							"value": "2023-06-03 00:00:00"
+						},
+						{
+							"key": "end",
+							"value": "2023-06-04 00:00:00"
+						},
+						{
+							"key": "orcherdId",
+							"value": "631564a4-9d2c-453a-7d32-08db95665ad6",
+							"disabled": true
+						},
+						{
+							"key": "orcherdIds",
+							"value": "0c1f770c-3392-11ee-be56-0242ac120002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orchard all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7077/api/v1/Orchard/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7077",
+					"path": [
+						"api",
+						"v1",
+						"Orchard",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "admin",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
