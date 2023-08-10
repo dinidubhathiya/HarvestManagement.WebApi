@@ -1,5 +1,6 @@
 ﻿using Hectre.HarvestManagement.Core.Models;
 using Hectre.HarvestManagement.Core.Services;
+using Hectre.HarvestManagement.WebAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,6 +32,14 @@ namespace Hectre.HarvestManagement.WebAPI.Controllers
         public async Task<IActionResult> AddHarvests([FromBody] Harvest harvestRecord)
         {
             await _harvestService.AddHarvestRecordAsync(harvestRecord);
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("AssignTimeSheet")]
+        public async Task<IActionResult> AssignTimeSheet([FromBody] TimeSheetHarvestRelation assignTimeSheetRequest)
+        {
+            await _harvestService.AssignTimeSheet(assignTimeSheetRequest);
             return Ok();
         }
 	}

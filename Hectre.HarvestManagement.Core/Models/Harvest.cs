@@ -27,6 +27,9 @@ namespace Hectre.HarvestManagement.Core.Models
         [Required]
         public Guid OrchardId { get; set; }
         public Orchard Orchard { get; set; }
+
+        public Guid? TimesheetId { get; set; }
+
     }
 }
 
